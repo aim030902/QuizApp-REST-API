@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import uz.aim.quizapprestapi.domains.entity.project.question.Question;
 import uz.aim.quizapprestapi.domains.enums.project.Language;
 import uz.aim.quizapprestapi.domains.enums.project.Level;
+import uz.aim.quizapprestapi.dtos.project.answer.AnswerCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectCreateDTO;
 import uz.aim.quizapprestapi.exception.GenericConflictException;
@@ -14,8 +15,7 @@ import uz.aim.quizapprestapi.repository.project.QuestionRepository;
 import uz.aim.quizapprestapi.repository.project.SubjectRepository;
 
 import javax.validation.ValidationException;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author : Abbosbek Murodov
@@ -43,5 +43,29 @@ public class QuestionValidation {
         if (Arrays.stream(Language.values()).noneMatch(language -> language.name().equals(dto.getLanguage()))) {
             throw new GenericNotFoundException("Language not found");
         }
+
+        List<String> list = new ArrayList<>();
+        List<Boolean> booleanList = new ArrayList<>();
+        if (!(Objects.isNull(dto.getAnswers()) || dto.getAnswers().isEmpty())) {
+            dto.getAnswers().forEach(dtoAnswer -> list.add(dtoAnswer.getContent()));
+            if (hasDuplicate(list)) {
+                throw new GenericConflictException("There are duplicate answers to one question !");
+            }
+
+            for (AnswerCreateDTO answerCreateDTO : dto.getAnswers()) {
+                if (answerCreateDTO.getIsRight()) {
+                    booleanList.add(true);
+                    if (booleanList.size() > 1) {
+                        throw new GenericConflictException("One question has many correct answers");
+                    }
+                }
+            }
+        }
+    }
+
+    private <T> boolean hasDuplicate(List<T> list) {
+        Set<T> set = new HashSet<>(list);
+        return !(set.size() == list.size());
     }
 }
+

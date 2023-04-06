@@ -19,13 +19,13 @@ import java.util.List;
 public class QuestionCreateDTO {
     private Long subjectId;
     private String content;
-    private List<AnswerCreateDTO> answerCreateDTOS;
+    private List<AnswerCreateDTO> answers;
     private String level;
     private String language;
 
-    public QuestionCreateDTO(String content, List<AnswerCreateDTO> answerCreateDTOS, String level, String language) {
+    public QuestionCreateDTO(String content, List<AnswerCreateDTO> answers, String level, String language) {
         this.content = content;
-        this.answerCreateDTOS = answerCreateDTOS;
+        this.answers = answers;
         this.level = level;
         this.language = language;
     }

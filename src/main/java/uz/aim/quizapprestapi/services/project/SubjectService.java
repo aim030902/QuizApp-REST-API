@@ -28,6 +28,7 @@ public class SubjectService {
         subjectValidation.validateOnSave(dto);
         Subject createdSubject = subjectMapper.toEntity(dto);
         createdSubject.getQuestions().forEach(question -> question.setSubject(createdSubject));
+        createdSubject.getQuestions().forEach(question -> question.getAnswers().forEach(answer -> answer.setQuestion(question)));
         return subjectMapper.toDTO(subjectRepository.save(createdSubject));
     }
 }

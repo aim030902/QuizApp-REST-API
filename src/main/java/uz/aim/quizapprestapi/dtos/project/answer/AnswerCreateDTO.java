@@ -20,7 +20,7 @@ import javax.persistence.ManyToOne;
 public class AnswerCreateDTO {
     private Long questionId;
     private String content;
-    private boolean isRight;
+    private Boolean isRight;
 
     public AnswerCreateDTO(String content, boolean isRight) {
         this.content = content;

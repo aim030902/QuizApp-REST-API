@@ -10,5 +10,5 @@ import java.sql.Timestamp;
  * Project : QuizApp-REST-API / IntelliJ IDEA
  */
 
-public record AnswerDTO(QuestionDTO questionDTO, Long id, String content, boolean isRight, Long createdBy, Timestamp createdAt, Long updatedBy, Timestamp updatedAt, boolean deleted) {
+public record AnswerDTO(Long questionId, Long id, String content, Boolean isRight, Long createdBy, Timestamp createdAt, Long updatedBy, Timestamp updatedAt, boolean deleted) {
 }

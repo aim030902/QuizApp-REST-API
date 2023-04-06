@@ -30,8 +30,8 @@ public class AnswerValidation {
         if (answers.stream().anyMatch(answer -> answer.getContent().equals(dto.getContent()))) {
             throw new GenericConflictException("This is answer already exists");
         }
-        if (dto.isRight()) {
-            if (answers.stream().anyMatch(Answer::isRight)) {
+        if (dto.getIsRight()) {
+            if (answers.stream().anyMatch(Answer::getIsRight)) {
                 throw new GenericConflictException("True answer already exists !");
             }
         }

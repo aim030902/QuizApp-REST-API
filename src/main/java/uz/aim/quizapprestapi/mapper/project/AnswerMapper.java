@@ -17,7 +17,8 @@ public interface AnswerMapper {
 
     @Mappings(value = {
             @Mapping(target = "createdBy", source = "createdBy.id"),
-            @Mapping(target = "updatedBy", source = "updatedBy.id")
+            @Mapping(target = "updatedBy", source = "updatedBy.id"),
+            @Mapping(target = "questionId", source = "question.id")
     })
     AnswerDTO toDTO(Answer entity);
 }

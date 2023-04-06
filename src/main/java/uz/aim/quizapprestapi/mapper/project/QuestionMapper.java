@@ -11,12 +11,14 @@ import uz.aim.quizapprestapi.dtos.project.question.QuestionDTO;
  * Project : QuizApp-REST-API / IntelliJ IDEA
  */
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = {SubjectMapper.class}, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = {SubjectMapper.class, AnswerMapper.class}, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface QuestionMapper {
     Question toEntity(QuestionCreateDTO dto);
     @Mappings(value = {
             @Mapping(target = "createdBy", source = "createdBy.id"),
-            @Mapping(target = "updatedBy", source = "updatedBy.id")
+            @Mapping(target = "updatedBy", source = "updatedBy.id"),
+            @Mapping(target = "answerDTOS", source = "answers"),
+            @Mapping(target = "subjectId", source = "subject.id")
     })
     QuestionDTO toDTO(Question entity);
 }

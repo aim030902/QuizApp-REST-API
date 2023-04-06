@@ -24,5 +24,6 @@ public class Answer extends Auditable {
     private String content;
     @ManyToOne
     private Question question;
-    private boolean isRight;
+    @Builder.Default
+    private Boolean isRight = false;
 }
