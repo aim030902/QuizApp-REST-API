@@ -2,8 +2,12 @@ package uz.aim.quizapprestapi.mapper.project;
 
 import org.mapstruct.*;
 import uz.aim.quizapprestapi.domains.entity.project.answer.Answer;
+import uz.aim.quizapprestapi.domains.entity.project.question.Question;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerDTO;
+import uz.aim.quizapprestapi.dtos.project.question.QuestionUpdateDTO;
+
+import java.util.List;
 
 /**
  * @author : Abbosbek Murodov
@@ -21,4 +25,7 @@ public interface AnswerMapper {
             @Mapping(target = "questionId", source = "question.id")
     })
     AnswerDTO toDTO(Answer entity);
+
+
+    List<AnswerDTO> toDTOs(List<Answer> answers);
 }

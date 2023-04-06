@@ -2,8 +2,13 @@ package uz.aim.quizapprestapi.mapper.project;
 
 import org.mapstruct.*;
 import uz.aim.quizapprestapi.domains.entity.project.question.Question;
+import uz.aim.quizapprestapi.domains.entity.project.subject.Subject;
 import uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.question.QuestionDTO;
+import uz.aim.quizapprestapi.dtos.project.question.QuestionUpdateDTO;
+import uz.aim.quizapprestapi.dtos.project.subject.SubjectUpdateDTO;
+
+import java.util.List;
 
 /**
  * @author : Abbosbek Murodov
@@ -21,4 +26,9 @@ public interface QuestionMapper {
             @Mapping(target = "subjectId", source = "subject.id")
     })
     QuestionDTO toDTO(Question entity);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    Question partialUpdate(QuestionUpdateDTO blogDTO, @MappingTarget Question question);
+
+    List<QuestionDTO> toDTOs(List<Question> questions);
 }

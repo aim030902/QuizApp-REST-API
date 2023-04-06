@@ -4,6 +4,9 @@ import org.mapstruct.*;
 import uz.aim.quizapprestapi.domains.entity.project.subject.Subject;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectDTO;
+import uz.aim.quizapprestapi.dtos.project.subject.SubjectUpdateDTO;
+
+import java.util.List;
 
 /**
  * @author : Abbosbek Murodov
@@ -15,10 +18,15 @@ import uz.aim.quizapprestapi.dtos.project.subject.SubjectDTO;
 public interface SubjectMapper {
     Subject toEntity(SubjectCreateDTO dto);
 
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    Subject partialUpdate(SubjectUpdateDTO blogDTO, @MappingTarget Subject subject);
+
     @Mappings(value = {
             @Mapping(target = "createdBy", source = "createdBy.id"),
             @Mapping(target = "updatedBy", source = "updatedBy.id"),
             @Mapping(target = "questionDTOS", source = "questions")
     })
     SubjectDTO toDTO(Subject entity);
+
+    List<SubjectDTO> toDTOs(List<Subject> subjects);
 }

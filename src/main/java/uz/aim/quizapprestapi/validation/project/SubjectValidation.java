@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectCreateDTO;
+import uz.aim.quizapprestapi.dtos.project.subject.SubjectUpdateDTO;
 import uz.aim.quizapprestapi.exception.GenericConflictException;
 import uz.aim.quizapprestapi.repository.auth.UserRepository;
 import uz.aim.quizapprestapi.repository.project.SubjectRepository;
@@ -60,6 +61,12 @@ public class SubjectValidation {
             }
         }
 
+    }
+
+    public void validateOnUpdate(SubjectUpdateDTO dto) {
+        if (subjectRepository.existsByName(dto.name())) {
+            throw new GenericConflictException("This is subject name already exists");
+        }
     }
 
     private <T> boolean hasDuplicate(List<T> list) {

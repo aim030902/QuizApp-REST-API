@@ -7,6 +7,7 @@ import uz.aim.quizapprestapi.domains.enums.project.Language;
 import uz.aim.quizapprestapi.domains.enums.project.Level;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO;
+import uz.aim.quizapprestapi.dtos.project.question.QuestionUpdateDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectCreateDTO;
 import uz.aim.quizapprestapi.exception.GenericConflictException;
 import uz.aim.quizapprestapi.exception.GenericNotFoundException;
@@ -61,6 +62,21 @@ public class QuestionValidation {
                 }
             }
         }
+    }
+
+    public void validateOnUpdate(QuestionUpdateDTO dto) {
+        Question foundQuestion = questionRepository.findById(dto.id()).orElseThrow(() -> new GenericNotFoundException("Question not found"));
+        List<Question> questions = questionRepository.findBySubjectId(foundQuestion.getSubject().getId());
+        if (Objects.nonNull(dto.content()) && questions.stream().anyMatch(question -> question.getContent().equals(dto.content()))) {
+            throw new GenericConflictException("This is question name already exists");
+        }
+        if (Objects.nonNull(dto.level()) && Arrays.stream(Level.values()).noneMatch(level -> level.name().equals(dto.level()))) {
+            throw new GenericNotFoundException("Level not found");
+        }
+        if (Objects.nonNull(dto.language()) && Arrays.stream(Language.values()).noneMatch(language -> language.name().equals(dto.language()))) {
+            throw new GenericNotFoundException("Language not found");
+        }
+
     }
 
     private <T> boolean hasDuplicate(List<T> list) {

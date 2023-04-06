@@ -267,3 +267,89 @@
 2023-04-06 13:13:39.891 DEBUG 37078 --- [http-nio-8060-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2023-04-06 13:13:39.905 DEBUG 37078 --- [http-nio-8060-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [SubjectDTO[id=1, name=Java, description=Java is great, questionDTOS=[QuestionDTO[id=1, subjectId=1,  (truncated)...]
 2023-04-06 13:13:39.907 DEBUG 37078 --- [http-nio-8060-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:28.170 DEBUG 38932 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2023-04-06 13:22:28.352 DEBUG 38932 --- [restartedMain] o.s.w.s.v.f.FreeMarkerConfigurer         : File system access not preferred: using SpringTemplateLoader
+2023-04-06 13:22:28.785 DEBUG 38932 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-04-06 13:22:28.843 DEBUG 38932 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2023-04-06 13:22:29.065 DEBUG 38932 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/**] in 'resourceHandlerMapping'
+2023-04-06 13:22:29.077 DEBUG 38932 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-04-06 13:22:45.116  INFO 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-06 13:22:45.116 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-04-06 13:22:45.117 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-04-06 13:22:45.117 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-04-06 13:22:45.118 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4881715d
+2023-04-06 13:22:45.118 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3f5c4668
+2023-04-06 13:22:45.118 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-04-06 13:22:45.118  INFO 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-06 13:22:45.146 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2023-04-06 13:22:45.152 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-04-06 13:22:45.170 DEBUG 38932 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.187 DEBUG 38932 --- [http-nio-8060-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2023-04-06 13:22:45.187 DEBUG 38932 --- [http-nio-8060-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2023-04-06 13:22:45.187 DEBUG 38932 --- [http-nio-8060-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2023-04-06 13:22:45.187 DEBUG 38932 --- [http-nio-8060-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2023-04-06 13:22:45.187 DEBUG 38932 --- [http-nio-8060-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2023-04-06 13:22:45.188 DEBUG 38932 --- [http-nio-8060-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-04-06 13:22:45.188 DEBUG 38932 --- [http-nio-8060-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-04-06 13:22:45.188 DEBUG 38932 --- [http-nio-8060-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-04-06 13:22:45.188 DEBUG 38932 --- [http-nio-8060-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-04-06 13:22:45.189 DEBUG 38932 --- [http-nio-8060-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-04-06 13:22:45.191 DEBUG 38932 --- [http-nio-8060-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.193 DEBUG 38932 --- [http-nio-8060-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.196 DEBUG 38932 --- [http-nio-8060-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.203 DEBUG 38932 --- [http-nio-8060-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.219 DEBUG 38932 --- [http-nio-8060-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.385 DEBUG 38932 --- [http-nio-8060-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api-docs/swagger-config", parameters={}
+2023-04-06 13:22:45.386 DEBUG 38932 --- [http-nio-8060-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2023-04-06 13:22:45.398 DEBUG 38932 --- [http-nio-8060-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-04-06 13:22:45.399 DEBUG 38932 --- [http-nio-8060-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8060/swagger-ui/oauth2-redir (truncated)...]
+2023-04-06 13:22:45.401 DEBUG 38932 --- [http-nio-8060-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:22:45.448 DEBUG 38932 --- [http-nio-8060-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api-docs", parameters={}
+2023-04-06 13:22:45.448 DEBUG 38932 --- [http-nio-8060-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2023-04-06 13:22:45.806 DEBUG 38932 --- [http-nio-8060-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2023-04-06 13:22:45.806 DEBUG 38932 --- [http-nio-8060-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing ["{"openapi":"3.0.1","info":{"title":"Trello.com model API","description":"This API is model for trell (truncated)..."]
+2023-04-06 13:22:45.808 DEBUG 38932 --- [http-nio-8060-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:23:16.530 DEBUG 38932 --- [http-nio-8060-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2023-04-06 13:23:16.531 DEBUG 38932 --- [http-nio-8060-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uz.aim.quizapprestapi.controller.auth.AuthController#login(LoginDTO)
+2023-04-06 13:23:16.552 DEBUG 38932 --- [http-nio-8060-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginDTO[email=admin@gmail.com, password=123]]
+2023-04-06 13:23:16.727 DEBUG 38932 --- [http-nio-8060-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2023-04-06 13:23:16.731 DEBUG 38932 --- [http-nio-8060-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [JwtResponseDTO[accessToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODA3Njkz (truncated)...]
+2023-04-06 13:23:16.733 DEBUG 38932 --- [http-nio-8060-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:23:33.205 DEBUG 38932 --- [http-nio-8060-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/subject/save", parameters={}
+2023-04-06 13:23:33.206 DEBUG 38932 --- [http-nio-8060-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uz.aim.quizapprestapi.controller.project.SubjectController#save(SubjectCreateDTO)
+2023-04-06 13:23:33.210 DEBUG 38932 --- [http-nio-8060-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [uz.aim.quizapprestapi.dtos.project.subject.SubjectCreateDTO@9099389]
+2023-04-06 13:23:33.218 DEBUG 38932 --- [http-nio-8060-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler uz.aim.quizapprestapi.handler.GenericGlobalExceptionHandler#conflict(GenericConflictException, HttpServletRequest)
+2023-04-06 13:23:33.219 DEBUG 38932 --- [http-nio-8060-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-06 13:23:33.219 DEBUG 38932 --- [http-nio-8060-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [uz.aim.quizapprestapi.dtos.response.ApiResponse@2e4db78a]
+2023-04-06 13:23:33.221  WARN 38932 --- [http-nio-8060-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [uz.aim.quizapprestapi.exception.GenericConflictException: This is subject already exists]
+2023-04-06 13:23:33.221 DEBUG 38932 --- [http-nio-8060-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2023-04-06 13:24:42.647 DEBUG 38932 --- [http-nio-8060-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/question/save", parameters={}
+2023-04-06 13:24:42.648 DEBUG 38932 --- [http-nio-8060-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uz.aim.quizapprestapi.controller.project.QuestionController#save(QuestionCreateDTO)
+2023-04-06 13:24:42.649 DEBUG 38932 --- [http-nio-8060-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO@1dc1a962]
+2023-04-06 13:24:42.689 DEBUG 38932 --- [http-nio-8060-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler uz.aim.quizapprestapi.handler.GenericGlobalExceptionHandler#conflict(GenericConflictException, HttpServletRequest)
+2023-04-06 13:24:42.690 DEBUG 38932 --- [http-nio-8060-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-06 13:24:42.690 DEBUG 38932 --- [http-nio-8060-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [uz.aim.quizapprestapi.dtos.response.ApiResponse@5fcaaa3f]
+2023-04-06 13:24:42.690  WARN 38932 --- [http-nio-8060-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [uz.aim.quizapprestapi.exception.GenericConflictException: This is question already exists]
+2023-04-06 13:24:42.690 DEBUG 38932 --- [http-nio-8060-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2023-04-06 13:25:06.176 DEBUG 38932 --- [http-nio-8060-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/question/save", parameters={}
+2023-04-06 13:25:06.177 DEBUG 38932 --- [http-nio-8060-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uz.aim.quizapprestapi.controller.project.QuestionController#save(QuestionCreateDTO)
+2023-04-06 13:25:06.178 DEBUG 38932 --- [http-nio-8060-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO@7b6a134d]
+2023-04-06 13:25:06.199 DEBUG 38932 --- [http-nio-8060-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler uz.aim.quizapprestapi.handler.GenericGlobalExceptionHandler#conflict(GenericConflictException, HttpServletRequest)
+2023-04-06 13:25:06.202 DEBUG 38932 --- [http-nio-8060-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-06 13:25:06.202 DEBUG 38932 --- [http-nio-8060-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [uz.aim.quizapprestapi.dtos.response.ApiResponse@48bcc602]
+2023-04-06 13:25:06.204  WARN 38932 --- [http-nio-8060-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [uz.aim.quizapprestapi.exception.GenericConflictException: This is question already exists]
+2023-04-06 13:25:06.205 DEBUG 38932 --- [http-nio-8060-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2023-04-06 13:25:20.488 DEBUG 38932 --- [http-nio-8060-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/question/save", parameters={}
+2023-04-06 13:25:20.488 DEBUG 38932 --- [http-nio-8060-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uz.aim.quizapprestapi.controller.project.QuestionController#save(QuestionCreateDTO)
+2023-04-06 13:25:20.489 DEBUG 38932 --- [http-nio-8060-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO@5c82ebc3]
+2023-04-06 13:25:20.553 DEBUG 38932 --- [http-nio-8060-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-06 13:25:20.563 DEBUG 38932 --- [http-nio-8060-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [QuestionDTO[id=3, subjectId=1, content=What is Java OOP?, answerDTOS=[], level=EASY, language=ENGLIS (truncated)...]
+2023-04-06 13:25:20.565 DEBUG 38932 --- [http-nio-8060-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-06 13:25:36.090 DEBUG 38932 --- [http-nio-8060-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/question/save", parameters={}
+2023-04-06 13:25:36.090 DEBUG 38932 --- [http-nio-8060-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to uz.aim.quizapprestapi.controller.project.QuestionController#save(QuestionCreateDTO)
+2023-04-06 13:25:36.091 DEBUG 38932 --- [http-nio-8060-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [uz.aim.quizapprestapi.dtos.project.question.QuestionCreateDTO@4d365f3f]
+2023-04-06 13:25:36.094 DEBUG 38932 --- [http-nio-8060-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler uz.aim.quizapprestapi.handler.GenericGlobalExceptionHandler#notFound(GenericNotFoundException, HttpServletRequest)
+2023-04-06 13:25:36.094 DEBUG 38932 --- [http-nio-8060-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-06 13:25:36.094 DEBUG 38932 --- [http-nio-8060-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [uz.aim.quizapprestapi.dtos.response.ApiResponse@42cc1ed]
+2023-04-06 13:25:36.095  WARN 38932 --- [http-nio-8060-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [uz.aim.quizapprestapi.exception.GenericNotFoundException: Subject not found]
+2023-04-06 13:25:36.095 DEBUG 38932 --- [http-nio-8060-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
