@@ -54,7 +54,9 @@ public class QuizService {
         List<QuizQuestion> quizQuestions = generateQuizQuestions(dto.getSubjectId(), createdQuiz.getLevel(), dto.getQuestionsCount());
         quizQuestions.forEach(quizQuestion -> quizQuestion.setQuiz(createdQuiz));
         createdQuiz.setQuestions(quizQuestions);
-        return quizMapper.toDTO(quizRepository.save(createdQuiz));
+        Quiz savedQuiz = quizRepository.save(createdQuiz);
+        savedQuiz.getQuestions().forEach(System.out::println);
+        return quizMapper.toDTO(savedQuiz);
     }
 
     public void delete(@NonNull QuizDeleteDTO dto) {
@@ -74,7 +76,9 @@ public class QuizService {
     }
 
     public QuizDTO get(@NonNull Long id) {
-       return quizMapper.toDTO(getQuiz(id));
+        Quiz quiz = getQuiz(id);
+        quiz.getQuestions().forEach(System.out::println);
+        return quizMapper.toDTO(quiz);
     }
 
     public List<QuizDTO> getAll(int page, int size) {
@@ -123,6 +127,6 @@ public class QuizService {
     }
 
     private Quiz getQuiz(Long id) {
-        return quizRepository.findById(id).orElseThrow(() -> new GenericNotFoundException("Quiz not found by id -> " + id));
+        return quizRepository.findQuizById(id).orElseThrow(() -> new GenericNotFoundException("Quiz not found by id -> " + id));
     }
 }

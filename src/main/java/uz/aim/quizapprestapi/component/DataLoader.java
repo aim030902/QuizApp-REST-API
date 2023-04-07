@@ -112,7 +112,7 @@ public class DataLoader implements CommandLineRunner {
                             .build()
             );
         }
-        for (int i=1; i<=20; i++) {
+        for (int i=21; i<=40; i++) {
             questions.add(
                     Question
                             .childBuilder()
@@ -124,7 +124,7 @@ public class DataLoader implements CommandLineRunner {
                             .build()
             );
         }
-        for (int i=1; i<=20; i++) {
+        for (int i=41; i<=60; i++) {
             questions.add(
                     Question
                             .childBuilder()
@@ -145,9 +145,9 @@ public class DataLoader implements CommandLineRunner {
             Question question = questions.get(i);
             question.setAnswers(
                     List.<Answer>of(
-                            Answer.childBuilder().question(question).content("Answer 0." + i + "1").isRight(true).createdBy(admin).build(),
-                            Answer.childBuilder().question(question).content("Answer 0." + i + "2").isRight(false).createdBy(admin).build(),
-                            Answer.childBuilder().question(question).content("Answer 0" + i + "3").isRight(false).createdBy(admin).build()
+                            Answer.childBuilder().question(question).content("Answer 0." + i + ".1").isRight(true).createdBy(admin).build(),
+                            Answer.childBuilder().question(question).content("Answer 0." + i + ".2").isRight(false).createdBy(admin).build(),
+                            Answer.childBuilder().question(question).content("Answer 0." + i + ".3").isRight(false).createdBy(admin).build()
                     )
             );
         }

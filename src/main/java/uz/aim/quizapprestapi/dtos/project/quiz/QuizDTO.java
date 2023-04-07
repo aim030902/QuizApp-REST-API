@@ -14,6 +14,6 @@ import java.util.List;
  * Project : QuizApp-REST-API / IntelliJ IDEA
  */
 
-public record QuizDTO(Long id, SubjectDTO subject, int questionsCount, List<QuizQuestionDTO> questions, Level level, Language language, Long createdBy, Timestamp createdAt, Long updatedBy, Timestamp updatedAt, boolean deleted) {
+public record QuizDTO(Long id, Long subjectId, int questionsCount, List<QuizQuestionDTO> questions, Level level, Language language, Long createdBy, Timestamp createdAt, Long updatedBy, Timestamp updatedAt, boolean deleted) {
 
 }

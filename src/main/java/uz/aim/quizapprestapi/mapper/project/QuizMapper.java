@@ -22,7 +22,8 @@ public interface QuizMapper {
 
     @Mappings(value = {
             @Mapping(target = "createdBy", source = "createdBy.id"),
-            @Mapping(target = "updatedBy", source = "updatedBy.id")
+            @Mapping(target = "updatedBy", source = "updatedBy.id"),
+            @Mapping(target = "subjectId", source = "subject.id")
     })
     QuizDTO toDTO(Quiz entity);
 
