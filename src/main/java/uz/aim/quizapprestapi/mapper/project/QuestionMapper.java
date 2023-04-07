@@ -22,7 +22,7 @@ public interface QuestionMapper {
     @Mappings(value = {
             @Mapping(target = "createdBy", source = "createdBy.id"),
             @Mapping(target = "updatedBy", source = "updatedBy.id"),
-            @Mapping(target = "answerDTOS", source = "answers"),
+            @Mapping(target = "answers", source = "answers"),
             @Mapping(target = "subjectId", source = "subject.id")
     })
     QuestionDTO toDTO(Question entity);

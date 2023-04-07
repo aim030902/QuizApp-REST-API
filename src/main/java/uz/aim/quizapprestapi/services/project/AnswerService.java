@@ -4,10 +4,12 @@ import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import uz.aim.quizapprestapi.domains.entity.project.answer.Answer;
 import uz.aim.quizapprestapi.domains.entity.project.question.Question;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerDTO;
+import uz.aim.quizapprestapi.dtos.project.answer.AnswerDeleteDTO;
 import uz.aim.quizapprestapi.dtos.project.answer.AnswerUpdateDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectUpdateDTO;
 import uz.aim.quizapprestapi.exception.GenericNotFoundException;
@@ -17,6 +19,7 @@ import uz.aim.quizapprestapi.repository.project.QuestionRepository;
 import uz.aim.quizapprestapi.validation.project.AnswerValidation;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -44,21 +47,37 @@ public class AnswerService {
         return answerMapper.toDTO(answerRepository.save(createdAnswer));
     }
 
+    public List<AnswerDTO> saveAll(List<AnswerCreateDTO> dtoList) {
+        List<AnswerDTO> answerDTOS = new ArrayList<>();
+        dtoList.forEach(dto -> answerDTOS.add(save(dto)));
+        return answerDTOS;
+    }
+
     public AnswerDTO update(AnswerUpdateDTO dto) {
         Answer foundAnswer = getAnswer(dto.id());
         answerValidation.validateOnUpdate(dto);
         return answerMapper.toDTO(answerRepository.save(partialUpdate(foundAnswer, dto)));
     }
 
-    public void delete(@NonNull Long id) {
-        Answer foundAnswer = getAnswer(id);
+    public void delete(@NonNull AnswerDeleteDTO dto) {
+        Answer foundAnswer = getAnswer(dto.id());
         answerRepository.delete(foundAnswer);
     }
 
-    public void softDelete(@NonNull Long id) {
-        Answer foundAnswer = getAnswer(id);
+    @Transactional
+    public void deleteAll(@NonNull List<AnswerDeleteDTO> dtoList) {
+        dtoList.forEach(this::delete);
+    }
+
+    public void softDelete(@NonNull AnswerDeleteDTO dto) {
+        Answer foundAnswer = getAnswer(dto.id());
         foundAnswer.setDeleted(true);
         answerRepository.save(foundAnswer);
+    }
+
+    @Transactional
+    public void softDeleteAll(@NonNull List<AnswerDeleteDTO> dtoList) {
+        dtoList.forEach(this::softDelete);
     }
 
     public AnswerDTO get(@NonNull Long id) {

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import uz.aim.quizapprestapi.domains.entity.project.subject.Subject;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectCreateDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectDTO;
+import uz.aim.quizapprestapi.dtos.project.subject.SubjectDeleteDTO;
 import uz.aim.quizapprestapi.dtos.project.subject.SubjectUpdateDTO;
 import uz.aim.quizapprestapi.exception.GenericNotFoundException;
 import uz.aim.quizapprestapi.mapper.project.SubjectMapper;
@@ -45,13 +46,13 @@ public class SubjectService {
         return subjectMapper.toDTO(subjectRepository.save(subjectMapper.partialUpdate(dto, foundSubject)));
     }
 
-    public void delete(@NonNull Long id) {
-        Subject subject = subjectRepository.findById(id).orElseThrow(() -> new GenericNotFoundException("This is subject not found by id -> " + id));
+    public void delete(@NonNull SubjectDeleteDTO dto) {
+        Subject subject = subjectRepository.findById(dto.id()).orElseThrow(() -> new GenericNotFoundException("This is subject not found by id -> " + dto.id()));
         subjectRepository.delete(subject);
     }
 
-    public void softDelete(@NonNull Long id) {
-        Subject subject = subjectRepository.findById(id).orElseThrow(() -> new GenericNotFoundException("This is subject not found by id -> " + id));
+    public void softDelete(@NonNull SubjectDeleteDTO dto) {
+        Subject subject = subjectRepository.findById(dto.id()).orElseThrow(() -> new GenericNotFoundException("This is subject not found by id -> " + dto.id()));
         subject.setDeleted(true);
         subjectRepository.save(subject);
     }

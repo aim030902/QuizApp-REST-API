@@ -7,6 +7,7 @@ import uz.aim.quizapprestapi.domains.Auditable;
 import uz.aim.quizapprestapi.domains.entity.auth.User;
 import uz.aim.quizapprestapi.domains.entity.project.question.Question;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,5 +33,11 @@ public class Subject extends Auditable {
     @Builder.Default
     private List<Question> questions = new ArrayList<>();
 
-
+    @Builder(builderMethodName = "childBuilder")
+    public Subject(Long id, Timestamp createdAt, Timestamp updatedAt, User createdBy, User updatedBy, boolean deleted, String name, String description, List<Question> questions) {
+        super(id, createdAt, updatedAt, createdBy, updatedBy, deleted);
+        this.name = name;
+        this.description = description;
+        this.questions = questions;
+    }
 }

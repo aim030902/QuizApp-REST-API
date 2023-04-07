@@ -3,6 +3,7 @@ package uz.aim.quizapprestapi.repository.project;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import uz.aim.quizapprestapi.domains.entity.project.question.Question;
+import uz.aim.quizapprestapi.domains.enums.project.Level;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ import java.util.List;
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
     List<Question> findBySubjectId(Long subject_id);
+    List<Question> findBySubjectIdAndLevel(Long subject_id, Level level);
 }
