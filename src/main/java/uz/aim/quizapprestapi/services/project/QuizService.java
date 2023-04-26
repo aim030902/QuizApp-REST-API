@@ -85,6 +85,16 @@ public class QuizService {
         return quizMapper.toDTOs(quizRepository.findAll(PageRequest.of(page, size)).getContent());
     }
 
+    public Quiz generateQuiz(@NonNull QuizCreateDTO dto) {
+        quizValidation.validateOnCreate(dto);
+        Quiz createdQuiz = quizMapper.toEntity(dto);
+        createdQuiz.setSubject(subjectRepository.findById(dto.getSubjectId()).get());
+        List<QuizQuestion> quizQuestions = generateQuizQuestions(dto.getSubjectId(), createdQuiz.getLevel(), dto.getQuestionsCount());
+        quizQuestions.forEach(quizQuestion -> quizQuestion.setQuiz(createdQuiz));
+        createdQuiz.setQuestions(quizQuestions);
+        return createdQuiz;
+    }
+
 
     private List<QuizQuestion> generateQuizQuestions(Long subjectId, @NonNull Level level,  int count) {
         return switch (level) {
